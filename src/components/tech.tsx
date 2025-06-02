@@ -19,7 +19,6 @@ export default function Tech() {
     { name: "Android", icon: "logos:android-icon" },
     { name: "TypeScript", icon: "logos:typescript-icon" },
     { name: "HTML5", icon: "logos:html-5" },
-    { name: "", icon: "" },
     { name: "CSS3", icon: "logos:css-3" },
     { name: "Git", icon: "logos:git-icon" },
     { name: "GitHub", icon: "logos:github-icon" },
@@ -27,9 +26,10 @@ export default function Tech() {
   ];
 
   return (
-    <div id="tech1" className="scroll-m-24 bg-[#020617] flex flex-col items-center justify-center">
-      
-      
+    <div
+      id="tech1"
+      className="scroll-m-24 bg-[#020617] flex flex-col items-center justify-center w-full px-2 sm:px-6 py-8 sm:py-12"
+    >
       <LampContainer>
         <motion.div
           initial={{ opacity: 0.5, y: 100 }}
@@ -39,22 +39,26 @@ export default function Tech() {
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="w-full max-w-6xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-20"
+          className="w-full max-w-6xl flex flex-wrap justify-center items-center gap-4 md:gap-12 "
         >
           {techIcons.map((tech, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center w-full cursor-pointer hover:scale-110 transition-transform duration-300"
+              className="flex flex-col items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300
+      basis-1  md:basis-1/6"
               title={tech.name}
             >
-              <Icon icon={tech.icon} width={80} height={80} className="text-white" />
-              <span className="text-sm text-gray-300 mt-2 text-center">{tech.name}</span>
+              <Icon
+                icon={tech.icon}
+                className="text-white w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-24 lg:h-24"
+              />
+              <span className="hidden md:block text-xs md:text-sm text-gray-300 mt-2 text-center">
+                {tech.name}
+              </span>
             </div>
           ))}
         </motion.div>
       </LampContainer>
-
-     
     </div>
   );
 }

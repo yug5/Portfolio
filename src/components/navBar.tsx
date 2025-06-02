@@ -10,17 +10,17 @@ export default function NavBar() {
 
   function scrollToId(id: string) {
     if (id === "tech") {
-      // Instantly jump to About
+      // First scroll to About
       const aboutEl = document.getElementById("about");
       if (aboutEl) {
-        aboutEl.scrollIntoView({ behavior: 'auto' }); // instant jump
-        // Then smoothly scroll to Tech
+        aboutEl.scrollIntoView({ behavior: 'smooth' });
+        // After the first scroll finishes, scroll to Tech
         setTimeout(() => {
           const techEl = document.getElementById("tech");
           if (techEl) {
             techEl.scrollIntoView({ behavior: 'smooth' });
           }
-        }, 10); // minimal delay for browser to process the jump
+        }, 200); // Adjust delay as needed for your scroll speed
       }
     } else {
       const el = document.getElementById(id);
@@ -78,9 +78,10 @@ export default function NavBar() {
       </HoverBorderGradient>
 
       {menuOpen && (
-        <div className="md:hidden mt-2  bg-black/90 text-white rounded-lg shadow-lg px-6 py-4 space-y-4 text-center text-base font-medium">
+        <div className=" absolute left-0 top-14 w-48 bg-black/90 text-white rounded-lg shadow-lg px-4 py-3 space-y-3 text-center text-base font-medium z-50">
           <a href="#home" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400">Home</a>
           <a href="#about" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400">About</a>
+          <a href="#tech" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400">Tech</a>
           <a href="#projects" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400">Projects</a>
           <a href="#contact" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400">Contact</a>
           <a href="#blog" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400">Blog</a>

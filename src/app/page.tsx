@@ -20,7 +20,7 @@ export default function Home() {
         <HeroParallax products={products} />
       </FadeInSection>
       <About />
-      <div id="tech" className="sticky top-0 z-0 shadow-2xl">
+      <div id="tech" className="sticky -top-24 z-0 shadow-2xl">
         <Tech />
         
       </div>
