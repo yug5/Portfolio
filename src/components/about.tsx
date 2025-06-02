@@ -26,10 +26,18 @@ export default function About() {
           </>
         }
       >
-        <div className="max-w-5xl mx-auto text-white bg-black p-4 md:p-10 ">
-          
+        <div className="max-w-5xl mx-auto text-white bg-black p-4 md:p-10 relative">
           {isInView && <TextGenerateEffect words={words} />}
-          
+
+          {/* 
+          <a
+            href="/cv.pdf" // Place your cv.pdf in the public/ folder
+            download
+            className="fixed md:absolute bottom-0 right-0 md:-bottom-20 md:-right-2 z-20 px-6 py-3 rounded-full bg-white/10 border border-white/30 backdrop-blur-md text-white font-semibold shadow-lg hover:bg-white/20 transition-all duration-200"
+            style={{ fontFamily: 'inherit' }}
+          >
+            Download CV
+          </a> */}
         </div>
       </ContainerScroll>
     </div>

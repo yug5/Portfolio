@@ -39,9 +39,9 @@ export const products = [
     thumbnail: "img/insta.png",
   },
   {
-    title: "LinkedIn",
-    link: "https://www.linkedin.com/in/yug-shrimali/",
-    thumbnail: "img/linkedin.png",
+    title: "HackerRank",
+    link: "https://www.hackerrank.com/yugshrimali82",
+    thumbnail: "img/hackerRank.png",
   },
   {
     title: "GitHub",
@@ -53,10 +53,52 @@ export const products = [
     link: "https://www.geeksforgeeks.org/user/yug_ud/",
     thumbnail: "img/gfg.png",
   },
+  
   {
-    title: "Twitter",
-    link: "https://twitter.com/yug_shrimali",
-    thumbnail: "img/twitter.png",
+    title: "CodeForce",
+    link: "https://codeforces.com/profile/yugshrimali",
+    thumbnail: "img/codeforces.png",
+  },
+  {
+    title: "Medium",
+    link: "https://medium.com/@yugshrimali82",
+    thumbnail: "img/medium.png",
+  },
+  
+  {
+    title: "Figma",
+    link: "https://www.figma.com/",
+    thumbnail: "img/figma.png",
+  },
+  {
+    title: "LinkedIn",
+    link: "https://www.linkedin.com/in/yug-shrimali/",
+    thumbnail: "img/linkedin.png",
+  },
+  {
+    title: "GitHub",
+    link: "https://github.com/yug5",
+    thumbnail: "img/github.png",
+  },
+  {
+    title: "protfolio",
+    link: "https://yugshrimali.vercel.app/",
+    thumbnail: "img/port.png",
+  },
+  {
+    title: "Gmail",
+    link: "https://www.geeksforgeeks.org/user/yug_ud/",
+    thumbnail: "img/gmail.png",
+  },
+  {
+    title: "YouTube",
+    link: "https://www.youtube.com",
+    thumbnail: "img/youtube.png",
+  },
+  {
+    title: "vercel",
+    link: "https://vercel.com/",
+    thumbnail: "img/vercel.png",
   },
   {
     title: "Instagram",
@@ -64,49 +106,18 @@ export const products = [
     thumbnail: "img/insta.png",
   },
   {
-    title: "LinkedIn",
-    link: "https://www.linkedin.com/in/yug-shrimali/",
-    thumbnail: "img/linkedin.png",
+    title: "Stack Overflow",
+    link: "https://stackoverflow.com/users/22162622/yug-shrimali",
+    thumbnail: "img/stackoverflow.png",
   },
-  {
-    title: "GitHub",
-    link: "https://github.com/yug5",
-    thumbnail: "img/github.png",
-  },
-  {
-    title: "GeekForGeeks",
-    link: "https://www.geeksforgeeks.org/user/yug_ud/",
-    thumbnail: "img/gfg.png",
-  },
-  {
-    title: "Twitter",
-    link: "https://twitter.com/yug_shrimali",
-    thumbnail: "img/twitter.png",
-  },
-  {
-    title: "Instagram",
-    link: "https://www.instagram.com/_yug_shrimali_/",
-    thumbnail: "img/insta.png",
-  },
-  {
-    title: "LinkedIn",
-    link: "https://www.linkedin.com/in/yug-shrimali/",
-    thumbnail: "img/linkedin.png",
-  },
-  {
-    title: "GitHub",
-    link: "https://github.com/yug5",
-    thumbnail: "img/github.png",
-  },
-  {
-    title: "GeekForGeeks",
-    link: "https://www.geeksforgeeks.org/user/yug_ud/",
-    thumbnail: "img/gfg.png",
-  },
-  {
-    title: "Twitter",
-    link: "https://twitter.com/yug_shrimali",
-    thumbnail: "img/twitter.png",
-  },
+  // {
+  //   title: "Twitter",
+  //   link: "https://twitter.com/yug_shrimali",
+  //   thumbnail: "img/x.png",
+  // },
+  
+  
+  
+
 ];
 

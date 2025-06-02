@@ -8,12 +8,13 @@ import Blank from "./blank";
 export default function Tech() {
   const techIcons = [
     { name: "C", icon: "logos:c" },
-    { name: "Next.js", icon: "logos:nextjs" },
-    { name: "React", icon: "logos:react" },
     { name: "Java", icon: "logos:java" },
+    { name: "Next.js", icon: "logos:nextjs" },
+    { name: "Kotlin", icon: "logos:kotlin" },
     { name: "Python", icon: "logos:python" },
     { name: "Firebase", icon: "logos:firebase" },
     { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
+    { name: "React", icon: "logos:react" },
     { name: "MySQL", icon: "logos:mysql" },
     { name: "JavaScript", icon: "logos:javascript" },
     { name: "Android", icon: "logos:android-icon" },
@@ -21,8 +22,13 @@ export default function Tech() {
     { name: "HTML5", icon: "logos:html-5" },
     { name: "CSS3", icon: "logos:css-3" },
     { name: "Git", icon: "logos:git-icon" },
-    { name: "GitHub", icon: "logos:github-icon" },
     { name: "Socket.IO", icon: "logos:socket-io" },
+    { name: "GitHub", icon: "logos:github-icon" },
+    { name: "PHP", icon: "logos:php" },
+    { name: "Linux", icon: "logos:linux-tux" },
+    
+
+
   ];
 
   return (
