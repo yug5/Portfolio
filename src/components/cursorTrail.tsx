@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 
 const TRAIL_LENGTH = 18;
 const BASE_SIZE = 20; 
@@ -17,7 +17,6 @@ export default function CursorTrail() {
   const frame = useRef(0);
 
   useEffect(() => {
-    // Hide the default cursor everywhere, even on clickable elements
     document.body.style.cursor = "none";
     document.documentElement.style.cursor = "none";
 
@@ -36,7 +35,7 @@ export default function CursorTrail() {
     });
 
     const animate = () => {
-      let { x, y } = mouse.current;
+      const { x, y } = mouse.current;
       dots.current.forEach((dot, i) => {
         if (i === 0) {
           // First dot snaps to mouse (acts as cursor)
@@ -68,13 +67,15 @@ export default function CursorTrail() {
 
     frame.current = requestAnimationFrame(animate);
 
+    // --- Fix: capture dots.current in a variable for cleanup ---
+    const dotsForCleanup = dots.current;
+
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      dots.current.forEach((dot) => {
+      dotsForCleanup.forEach((dot) => {
         if (dot.el) document.body.removeChild(dot.el);
       });
       cancelAnimationFrame(frame.current);
-      // Restore cursor
       document.body.style.cursor = "";
       document.documentElement.style.cursor = "";
     };

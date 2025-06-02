@@ -1,7 +1,7 @@
 import React from 'react'
 import { Timeline } from './ui/timeline';
 import { Icon } from '@iconify/react';
-import Contact from './contact';
+import Image from 'next/image';
 
 export default function projects() {
   const data = [
@@ -30,8 +30,10 @@ export default function projects() {
 
           <div>
             <a href="https://plsner.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <img
-                src="img/plsner.png"
+              <Image
+                src="/img/plsner.png"
+                width={800}
+                height={450}
                 className="w-full h-full rounded-lg shadow-lg transition-all hover:scale-110"
                 alt="plsner"
               />
@@ -65,8 +67,10 @@ export default function projects() {
 
           <div>
             <a href="https://ben10-showcase.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <img
-                src="img/ben10.png"
+              <Image
+                src="/img/ben10.png"
+                width={800}
+                height={450}
                 className="w-full h-[80%] rounded-lg shadow-lg transition-all hover:scale-110"
                 alt="ben10"
               />
@@ -104,8 +108,10 @@ export default function projects() {
 
           <div>
             <a href="https://expense-tracker-yug.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <img
-                src="img/expense.png"
+              <Image
+                src="/img/expense.png"
+                width={800}
+                height={450}
                 className="w-full h-[80%] rounded-lg shadow-lg transition-all hover:scale-110"
                 alt="expense"
               />
@@ -143,8 +149,10 @@ export default function projects() {
 
           <div>
             <a href="https://your-portfolio-link.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <img
-                src="img/port.png"
+              <Image
+                src="/img/port.png"
+                width={800}
+                height={450}
                 className="w-full h-[80%] rounded-lg shadow-lg transition-all hover:scale-110"
                 alt="portfolio"
               />
@@ -180,8 +188,10 @@ export default function projects() {
           </div>
           <div>
             <a href="https://pawsandhearts.example.com" target="_blank" rel="noopener noreferrer">
-              <img
-                src="img/pawshearts.png"
+              <Image
+                src="/img/pawshearts.png"
+                width={800}
+                height={450}
                 className="w-full h-[80%] rounded-lg shadow-lg transition-all hover:scale-110"
                 alt="paws & hearts"
               />
@@ -215,8 +225,10 @@ export default function projects() {
 
           <div>
             <a href="https://fms.example.com" target="_blank" rel="noopener noreferrer">
-              <img
-                src="img/fms.png"
+              <Image
+                src="/img/fms.png"
+                width={800}
+                height={450}
                 className="w-full h-[100%] rounded-lg shadow-lg transition-all hover:scale-110"
                 alt="fms"
               />

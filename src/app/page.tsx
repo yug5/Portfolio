@@ -5,10 +5,7 @@ import Tech from "@/components/tech";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import Projects from "@/components/projects";
 import { FadeInSection } from "@/components/ui/FadeIn";
-import Contact from "@/components/contact";
-import { AnimatePresence, motion } from "motion/react";
-import { useRef, useState } from "react";
-import Blank from "@/components/blank";
+
 import CursorTrail from "@/components/cursorTrail";
 
 export default function Home() {
@@ -32,7 +29,7 @@ export default function Home() {
   );
 }
 
-export const products = [
+const products = [
   {
     title: "Instagram",
     link: "https://www.instagram.com/_yug_shrimali_/",

@@ -1,9 +1,9 @@
 "use client";
-import React, { useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion} from "framer-motion";
 import { LampContainer } from "./ui/lamp";
 import { Icon } from "@iconify/react";
-import Blank from "./blank";
+
 
 export default function Tech() {
   const techIcons = [

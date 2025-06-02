@@ -51,7 +51,7 @@ export function ContactMe() {
           setSent(true);    // Show the Thank You popup
           formRef.current?.reset(); // Optionally reset the form
         },
-        (error) => {
+        () => { // removed 'error' parameter
           alert('Failed to send message. Please try again.');
         }
       );
@@ -98,7 +98,7 @@ export function ContactMe() {
           scale: { type: "spring", stiffness: 300, damping: 20 },
         }}
       >
-        <span className="relative z-20">Let's Talk!</span>
+        <span className="relative z-20">Let&apos;s Talk!</span>
         
         <motion.span
           className="absolute -top-10 -left-10 w-32 h-32 bg-purple-400 opacity-30 rounded-full blur-2xl"
@@ -147,10 +147,10 @@ export function ContactMe() {
                 ×
               </button>
               <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2 text-center drop-shadow-lg">
-                Let's Connect!
+                Let&apos;s Connect!
               </h2>
               <p className="text-neutral-300 text-base md:text-lg mb-8 max-w-xl text-center">
-                🚀 Drop your message and I'll get back to you soon!
+                🚀 Drop your message and I&apos;ll get back to you soon!
               </p>
               <form
                 ref={formRef}
