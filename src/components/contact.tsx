@@ -29,7 +29,7 @@ export function ContactMe() {
     const rect = section.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    setBtnPos({ x: x * 0.15, y: y * 0.15 }); // adjust multiplier for sensitivity
+    setBtnPos({ x: x * 0.28, y: y * 0.28 }); // increased multiplier for farther movement
   };
 
   const handleSectionMouseLeave = () => setBtnPos({ x: 0, y: 0 });
@@ -76,18 +76,30 @@ export function ContactMe() {
         🚀 Let’s build something amazing together! Whether you have an idea, a project, or just want to say hi, I’m always excited to connect with creative minds and passionate people.
       </p>
 
-      {/* Magnetic Button that follows mouse in section */}
       <motion.button
-        className="relative justify-center items-center text-center  z-10 px-12 py-6 mb-12 rounded-full bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 text-white text-2xl font-bold shadow-2xl overflow-hidden border-4 border-transparent hover:border-blue-400 transition-all"
+        className="relative justify-center items-center text-center z-10 px-6 py-3 md:px-12 md:py-6 mb-12 rounded-full bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 text-white text-2xl font-bold shadow-2xl overflow-hidden border-4 border-transparent hover:border-blue-400 transition-all"
         style={{
           boxShadow: "0 8px 32px 0 rgba(31,38,135,0.37)",
         }}
         onClick={() => setIsOpen(true)}
-        animate={{ x: btnPos.x, y: btnPos.y, scale: isOpen ? 0.95 : 1 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        animate={{
+          x: btnPos.x,
+          y: [btnPos.y, btnPos.y - 12, btnPos.y, btnPos.y + 12, btnPos.y],
+          scale: isOpen ? 0.95 : 1,
+        }}
+        transition={{
+          x: { type: "spring", stiffness: 400, damping: 12 }, // faster follow
+          y: {
+            duration: 2,
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "easeInOut",
+          },
+          scale: { type: "spring", stiffness: 300, damping: 20 },
+        }}
       >
         <span className="relative z-20">Let's Talk!</span>
-        {/* Animated background blobs */}
+        
         <motion.span
           className="absolute -top-10 -left-10 w-32 h-32 bg-purple-400 opacity-30 rounded-full blur-2xl"
           animate={{ scale: [1, 1.3, 1], rotate: [0, 30, 0] }}
@@ -100,7 +112,6 @@ export function ContactMe() {
         />
       </motion.button>
 
-      {/* Modal for Let's Connect */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -116,7 +127,7 @@ export function ContactMe() {
               exit={{ scale: 0.8, opacity: 0, y: 100 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
             >
-              {/* Animated floating blobs */}
+            
               <motion.div
                 className="absolute -top-12 -left-12 w-40 h-40 bg-blue-500 opacity-20 rounded-full blur-2xl pointer-events-none"
                 animate={{ x: [0, 30, 0], y: [0, 20, 0], scale: [1, 1.2, 1] }}
