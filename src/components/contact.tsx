@@ -1,6 +1,7 @@
 "use client";
 import { AnimatePresence, motion } from 'motion/react';
-import React, { useRef, useState } from 'react'
+import emailjs from '@emailjs/browser';
+import React, { useEffect, useRef, useState } from 'react'
 
 export default function Contact() {
   return (
@@ -14,8 +15,10 @@ export default function Contact() {
 
 export function ContactMe() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const [btnPos, setBtnPos] = useState({ x: 0, y: 0 });
   const [isOpen, setIsOpen] = useState(false);
+  const [sent, setSent] = useState(false);
 
   // Button will follow mouse inside the section
   const handleSectionMouseMove = (e: React.MouseEvent) => {
@@ -28,6 +31,29 @@ export function ContactMe() {
   };
 
   const handleSectionMouseLeave = () => setBtnPos({ x: 0, y: 0 });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm(
+        'service_xh4dvwg',    // your EmailJS service ID
+        'template_hopm0gk',   // your EmailJS template ID
+        formRef.current,
+        'GFxXIf5bkm487VUoz'   // your EmailJS public key
+      )
+      .then(
+        () => {
+          setIsOpen(false); // Close the "Let's Connect" modal
+          setSent(true);    // Show the Thank You popup
+          formRef.current?.reset(); // Optionally reset the form
+        },
+        (error) => {
+          alert('Failed to send message. Please try again.');
+        }
+      );
+  };
 
   return (
     <div
@@ -72,11 +98,11 @@ export function ContactMe() {
         />
       </motion.button>
 
-      {/* Creative Modal Form */}
+      {/* Modal for Let's Connect */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black" // changed here
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -114,12 +140,9 @@ export function ContactMe() {
                 🚀 Drop your message and I'll get back to you soon!
               </p>
               <form
+                ref={formRef}
                 className="space-y-6"
-                onSubmit={e => {
-                  e.preventDefault();
-                  setIsOpen(false);
-                  // You can add your form submission logic here
-                }}
+                onSubmit={handleSubmit}
               >
                 <motion.div
                   className="flex flex-col gap-2"
@@ -130,6 +153,7 @@ export function ContactMe() {
                   <label htmlFor="name" className="text-gray-300 font-semibold">Name</label>
                   <input
                     id="name"
+                    name="name"
                     type="text"
                     required
                     className="p-3 rounded-xl bg-[#232347] border border-blue-500/30 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
@@ -145,6 +169,7 @@ export function ContactMe() {
                   <label htmlFor="email" className="text-gray-300 font-semibold">Email</label>
                   <input
                     id="email"
+                    name="email"
                     type="email"
                     required
                     className="p-3 rounded-xl bg-[#232347] border border-purple-500/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
@@ -160,6 +185,7 @@ export function ContactMe() {
                   <label htmlFor="message" className="text-gray-300 font-semibold">Message</label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={4}
                     required
                     className="p-3 rounded-xl bg-[#232347] border border-blue-500/30 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
@@ -174,11 +200,14 @@ export function ContactMe() {
                 >
                   Send ✉️
                 </motion.button>
-              </form>
+               </form>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Thank You Popup - always outside modal AnimatePresence */}
+      {sent && <ThankYouPopup onClose={() => setSent(false)} />}
 
       {/* Footer */}
       <footer className="w-full mt-16 text-center text-gray-400 text-sm opacity-80">
@@ -187,3 +216,30 @@ export function ContactMe() {
     </div>
   );
 }
+
+const ThankYouPopup = React.memo(function ThankYouPopup({ onClose }: { onClose: () => void }) {
+  useEffect(() => {
+    const timeout = setTimeout(onClose, 1000);
+    return () => clearTimeout(timeout);
+  }, [onClose]);
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm">
+      <div className="relative bg-gradient-to-br from-[#232347] to-[#181830] rounded-3xl shadow-2xl px-8 py-12 flex flex-col items-center max-w-xs w-full border-2 border-blue-600">
+        <button
+          className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-black/80 shadow-lg text-white text-2xl font-bold hover:bg-red-600 transition"
+          onClick={onClose}
+          aria-label="Close"
+        >
+          ×
+        </button>
+        <h2 className="text-2xl font-extrabold text-blue-400 mb-2 text-center drop-shadow-lg">
+          Thank you!
+        </h2>
+        <p className="text-neutral-200 text-lg text-center mb-2">
+          I will contact you soon.
+        </p>
+      </div>
+    </div>
+  );
+});

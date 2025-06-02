@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
-const TRAIL_LENGTH = 16;
+const TRAIL_LENGTH = 18;
 const BASE_SIZE = 20; 
 
 export default function CursorTrail() {

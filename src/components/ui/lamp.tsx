@@ -30,7 +30,7 @@ export const LampContainer = ({
   className?: string;
 }) => {
   return (
-    <div >
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 w-full rounded-md ">
       <h1 className="text-5xl text-center font-bold text-white mt-40 ">Tech Stack</h1>
     <div
       className={cn(

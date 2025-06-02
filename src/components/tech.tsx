@@ -26,9 +26,9 @@ export default function Tech() {
   ];
 
   return (
-    <div id="tech" className="bg-[#020617] min-h-screen flex flex-col items-center justify-center px-6">
+    <div id="tech" className="bg-[#020617] min-h-screen flex flex-col items-center justify-center">
       
-
+      
       <LampContainer>
         <motion.div
           initial={{ opacity: 0.5, y: 100 }}
