@@ -5,11 +5,13 @@ import React, { useEffect, useRef, useState } from 'react'
 
 export default function Contact() {
   return (
-    <div className='bg-black '>
-
-      <ContactMe/>
+    <div className="bg-black h-[10vh]">
+      <ContactMe />
+      <footer className="w-full mt-16 text-center text-gray-400 text-sm opacity-80">
+        &copy; {new Date().getFullYear()} yug shrimali
+      </footer>
     </div>
-  )
+  );
 }
 
 
@@ -58,7 +60,7 @@ export function ContactMe() {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col z-50 items-center justify-center w-full relative h-1/4 bottom-0"
+      className="flex flex-col z-50 items-center justify-center w-full relative  bottom-0"
       id='contact'
       onMouseMove={handleSectionMouseMove}
       onMouseLeave={handleSectionMouseLeave}
@@ -76,7 +78,7 @@ export function ContactMe() {
 
       {/* Magnetic Button that follows mouse in section */}
       <motion.button
-        className="relative z-10 px-12 py-6 mb-12 rounded-full bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 text-white text-2xl font-bold shadow-2xl overflow-hidden border-4 border-transparent hover:border-blue-400 transition-all"
+        className="relative justify-center items-center text-center  z-10 px-12 py-6 mb-12 rounded-full bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 text-white text-2xl font-bold shadow-2xl overflow-hidden border-4 border-transparent hover:border-blue-400 transition-all"
         style={{
           boxShadow: "0 8px 32px 0 rgba(31,38,135,0.37)",
         }}
@@ -210,9 +212,7 @@ export function ContactMe() {
       {sent && <ThankYouPopup onClose={() => setSent(false)} />}
 
       {/* Footer */}
-      <footer className="w-full mt-16 text-center text-gray-400 text-sm opacity-80">
-        &copy; {new Date().getFullYear()} yug shrimali
-      </footer>
+      
     </div>
   );
 }

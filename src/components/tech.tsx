@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LampContainer } from "./ui/lamp";
 import { Icon } from "@iconify/react";
+import Blank from "./blank";
 
 export default function Tech() {
   const techIcons = [
@@ -26,7 +27,7 @@ export default function Tech() {
   ];
 
   return (
-    <div id="tech" className="bg-[#020617] min-h-screen flex flex-col items-center justify-center">
+    <div id="tech1" className="scroll-m-24 bg-[#020617] flex flex-col items-center justify-center">
       
       
       <LampContainer>
@@ -52,6 +53,7 @@ export default function Tech() {
           ))}
         </motion.div>
       </LampContainer>
+
      
     </div>
   );

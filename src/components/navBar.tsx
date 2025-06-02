@@ -9,9 +9,24 @@ export default function NavBar() {
   const lastScroll = useRef(0);
 
   function scrollToId(id: string) {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    if (id === "tech") {
+      // Instantly jump to About
+      const aboutEl = document.getElementById("about");
+      if (aboutEl) {
+        aboutEl.scrollIntoView({ behavior: 'auto' }); // instant jump
+        // Then smoothly scroll to Tech
+        setTimeout(() => {
+          const techEl = document.getElementById("tech");
+          if (techEl) {
+            techEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 10); // minimal delay for browser to process the jump
+      }
+    } else {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   }
 

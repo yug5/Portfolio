@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import About from "@/components/about";
 import NavBar from "@/components/navBar";
 import Tech from "@/components/tech";
@@ -11,32 +11,23 @@ import { useRef, useState } from "react";
 import Blank from "@/components/blank";
 import CursorTrail from "@/components/cursorTrail";
 
-
-
 export default function Home() {
   return (
-    <div className="text-white bg-black ">
-      
-
-      <NavBar/>
-      <CursorTrail/>
+    <div className="text-white bg-black">
+      <NavBar />
+      <CursorTrail />
       <FadeInSection>
-      <HeroParallax products={products} />
+        <HeroParallax products={products} />
       </FadeInSection>
-            
-        <About/>
-      <div className="sticky top-0 z-0 shadow-2xl">
-        <Tech/>
-        <Blank/>
+      <About />
+      <div id="tech" className="sticky top-0 z-0 shadow-2xl">
+        <Tech />
+        
       </div>
       <div className="z-10">
         <Projects />
+    
       </div>
-      <Contact />
-     
-      
-      
-      
     </div>
   );
 }
@@ -45,98 +36,77 @@ export const products = [
   {
     title: "Instagram",
     link: "https://www.instagram.com/_yug_shrimali_/",
-    thumbnail:
-      "img/insta.png",
+    thumbnail: "img/insta.png",
   },
   {
     title: "LinkedIn",
     link: "https://www.linkedin.com/in/yug-shrimali/",
-    thumbnail:
-      "img/linkedin.png",
+    thumbnail: "img/linkedin.png",
   },
   {
     title: "GitHub",
     link: "https://github.com/yug5",
-    thumbnail:
-      "img/github.png",
+    thumbnail: "img/github.png",
   },
-  
   {
     title: "GeekForGeeks",
     link: "https://www.geeksforgeeks.org/user/yug_ud/",
-    thumbnail:
-      "img/gfg.png",
+    thumbnail: "img/gfg.png",
   },
   {
     title: "Twitter",
     link: "https://twitter.com/yug_shrimali",
-    thumbnail:
-      "img/twitter.png",
+    thumbnail: "img/twitter.png",
   },
   {
     title: "Instagram",
     link: "https://www.instagram.com/_yug_shrimali_/",
-    thumbnail:
-      "img/insta.png",
+    thumbnail: "img/insta.png",
   },
   {
     title: "LinkedIn",
     link: "https://www.linkedin.com/in/yug-shrimali/",
-    thumbnail:
-      "img/linkedin.png",
+    thumbnail: "img/linkedin.png",
   },
   {
     title: "GitHub",
     link: "https://github.com/yug5",
-    thumbnail:
-      "img/github.png",
+    thumbnail: "img/github.png",
   },
-  
   {
     title: "GeekForGeeks",
     link: "https://www.geeksforgeeks.org/user/yug_ud/",
-    thumbnail:
-      "img/gfg.png",
+    thumbnail: "img/gfg.png",
   },
   {
     title: "Twitter",
     link: "https://twitter.com/yug_shrimali",
-    thumbnail:
-      "img/twitter.png",
+    thumbnail: "img/twitter.png",
   },
   {
     title: "Instagram",
     link: "https://www.instagram.com/_yug_shrimali_/",
-    thumbnail:
-      "img/insta.png",
+    thumbnail: "img/insta.png",
   },
   {
     title: "LinkedIn",
     link: "https://www.linkedin.com/in/yug-shrimali/",
-    thumbnail:
-      "img/linkedin.png",
+    thumbnail: "img/linkedin.png",
   },
   {
     title: "GitHub",
     link: "https://github.com/yug5",
-    thumbnail:
-      "img/github.png",
+    thumbnail: "img/github.png",
   },
-  
   {
     title: "GeekForGeeks",
     link: "https://www.geeksforgeeks.org/user/yug_ud/",
-    thumbnail:
-      "img/gfg.png",
+    thumbnail: "img/gfg.png",
   },
   {
     title: "Twitter",
     link: "https://twitter.com/yug_shrimali",
-    thumbnail:
-      "img/twitter.png",
+    thumbnail: "img/twitter.png",
   },
-  
-
-  
 ];
 

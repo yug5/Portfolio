@@ -176,7 +176,7 @@ export default function projects() {
 
   return (
     <div id='projects' >
-      <div className="relative rounded-s-3xl w-full overflow-clip  bg-gradient-to-b from-black to-black text-white font-sans ">
+      <div className="relative rounded-s-3xl w-full  bg-gradient-to-b from-black to-black text-white font-sans ">
         <Timeline data={data} />
       </div>
        
